@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body,html{
+    overflow-x: visible;
+}
+.showcase{
+    right: 0;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    transition: .3s;
+}
+.showcase.active{
+    right: 250px;
+}
+.nav{
+    
+    display: none;
+}
+.nav.active{
+    display: block;
+    right: 0;
+    top: 0;
+    position: absolute;
+    color: #111;
+    display: flex;
+    height: 100vh;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+}
+.nav ul{
+    list-style-type: none;
+}
+.nav ul li {
+    margin-top: 15px;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: #111;
+   cursor: pointer;
+   transition: .3s;
+}
+.nav ul li a:hover{
+    color: rgb(0, 195, 255);
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    position: absolute;
+    padding: 40px 60px;
+    
+}
+.header img{
+    width: 70px;
+    cursor: pointer;
+}
+.header .menu{
+    position: relative;
+    cursor: pointer;
+    
+}
+.menu div{
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px;
+}
+video{
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+}
+.text{
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    max-width: 700px;
+    padding-left: 80px;
+    color: #111;
+}
+.text h2{
+    font-size: 4em;
+}
+.text h3{
+    font-size: 3em;
+}
+.text p{
+    font-size: 1.2em;
+}
+.text a{
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-top: 5px;
+    color: #111;
+    background-color: whitesmoke;
+    width: fit-content;
+    border-radius: 7px;
+    letter-spacing: 1.5pxpx;
+    cursor: pointer;
+    transition: .3s;
+}
+.text a:hover{
+    letter-spacing: 5px;
+}
+
+
+@media(max-width:991px){
+    .text h2{
+        font-size: 3em;
+    }
+    .text h3{
+        font-size: 2em;
+    }
+    .text p{
+        font-size: 1em;
+    }
+}

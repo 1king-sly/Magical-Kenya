@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>MAGICAL KENYA</title>
+</head>
+<body>
+   <section class="showcase">
+    <div class="header">
+        <img src="kenya-removebg-preview.png">
+        <div class="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="text">
+        <h2>EXPLORE THE UNIVERSE</h2>
+        <h3>TOUR MAGICAL KENYA</h3>
+        <p>Ultimate experience in the best travel destination and pleasure is an entire guarantee</p>
+        <a href="#">EXPLORE </a>
+    </div>
+    <div class="overlay"></div>
+    <video src="videoplayback.mp4" muted loop autoplay></video>
+   </section>
+   <div class="nav">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">TRAVEL</a></li>
+            <li><a href="#">HOTELS</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+   </div>
+   <script>
+    const nav = document.querySelector(".nav");
+    const menu = document.querySelector(".menu");
+    const showcase = document.querySelector(".showcase");
+
+    menu.addEventListener("click",()=>{
+        nav.classList.toggle("active");
+        showcase.classList.toggle("active");
+    })
+
+   </script>
+</body>
+</html>
