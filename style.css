@@ -5,10 +5,11 @@
     font-family: sans-serif;
 }
 body,html{
-    overflow-x: visible;
+    overflow-x: hidden;
 }
 .showcase{
     right: 0;
+
     position: absolute;
     display: flex;
     width: 100%;
@@ -55,10 +56,20 @@ body,html{
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    z-index: 10;
+    z-index: 10000000;
     position: absolute;
     padding: 40px 60px;
+    animation: header 3s linear forwards;
     
+}
+@keyframes header{
+    0%{
+        transform: translateY(-100px);
+
+    }
+    100%{
+        transform: translateY(0);
+    }
 }
 .header img{
     width: 70px;
@@ -67,6 +78,7 @@ body,html{
 .header .menu{
     position: relative;
     cursor: pointer;
+    z-index: 100000;
     
 }
 .menu div{
@@ -74,6 +86,7 @@ body,html{
     height: 3px;
     background-color: black;
     margin: 4px;
+    z-index: 1000000;
 }
 video{
     top: 0;
@@ -91,17 +104,38 @@ video{
     height: 100vh;
     justify-content: center;
     max-width: 700px;
-    padding-left: 80px;
+    padding: 0px 60px;
     color: #111;
+   
+}
+@keyframes text {
+    0%{
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 .text h2{
     font-size: 4em;
+    animation-delay: 0s;
+    animation: text 4s linear forwards;
+    opacity: 0;
 }
 .text h3{
+    animation-delay: 3s;
     font-size: 3em;
+    animation-delay: 6s;
+    animation: text 3s linear forwards;
+    opacity: 0;
 }
 .text p{
     font-size: 1.2em;
+    animation: text 3s linear forwards;
+    animation-delay: 3s;
+    opacity: 0;
 }
 .text a{
     text-decoration: none;
@@ -114,6 +148,18 @@ video{
     letter-spacing: 1.5pxpx;
     cursor: pointer;
     transition: .3s;
+    animation: btn 6s linear forwards;
+    opacity: 0;
+}
+@keyframes btn{
+    0%{
+        transform: translateY(200px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 .text a:hover{
     letter-spacing: 5px;
@@ -130,4 +176,48 @@ video{
     .text p{
         font-size: 1em;
     }
+    .text{
+        padding: 0px 60px;
+        max-width: 500px;
+    }
+}
+@media(max-width:575px){
+    .showcase.active{
+        right: 0;
+    }
+    .nav{
+        display: block;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        background-color: white;
+        z-index: 10000;
+        font-size: 20px;
+        top: -1000px;
+        transition: .3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom-right-radius: 40%;
+        left: 0;
+        right: 0;
+    }
+    .nav.active{
+        top: 0;
+        right: 0;
+        width: 100vw;
+        
+    }
+}
+@media(max-width:485px){
+    .text h2{
+        font-size: 2em;
+    }
+    .text h3{
+        font-size: 1.5em;
+    }
+    .text p{
+        font-size: 1em;
+    }
+    
 }
